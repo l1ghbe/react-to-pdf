@@ -108,6 +108,17 @@
   margin-left: 0.5rem;
 }
 
+/* .downloadBtn {
+  position: absolute;
+  background: #000;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  outline: none;
+  top: 10px;
+  left: 10px;
+} */
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
