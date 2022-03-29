@@ -1,16 +1,31 @@
 import type { NextPage } from "next";
+import { useEffect, useState } from "react";
 import Page from "../components/Page";
 // import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+    const [text, setText] = useState();
+
+    useEffect(() => {
+        const getData = async () => {
+            const res = await fetch("api/hello");
+            const data = await res.json();
+            setText(data);
+        };
+        getData();
+    }, []);
+
     return (
         <>
             <a
                 href="/api/pdf"
                 download="generated_pdf.pdf"
-                className="downloadBtn"
+                className="btn btn-download"
             >
                 Download PDF
+            </a>
+            <a href="/about" className="btn btn-about">
+                About
             </a>
             <Page>
                 <h1>Generated PDF</h1>
@@ -28,6 +43,7 @@ const Home: NextPage = () => {
                         Here is a link to google
                     </a>
                 </div>
+                {/* <p>{JSON.stringify(text)}</p> */}
             </Page>
         </>
     );
