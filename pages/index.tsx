@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import Page from "../components/Page";
+import Link from "next/link";
 // import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -24,9 +25,10 @@ const Home: NextPage = () => {
             >
                 Download PDF
             </a>
-            <a href="/about" className="btn btn-about">
-                About
-            </a>
+            <Link href="/about">
+                <a className="btn btn-about">About</a>
+            </Link>
+
             <Page>
                 <h1>Generated PDF</h1>
                 <p>This is test file</p>
